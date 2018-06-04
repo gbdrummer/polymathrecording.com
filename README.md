@@ -1,2 +1,1 @@
-# gbdrummer.github.io
-Promo Site
+# http://polymathmusic.productions
