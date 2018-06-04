@@ -1,0 +1,30 @@
+custom-properties {
+  --red: rgb(200,57,57);
+
+	--font-family: -apple-system, BlinkMacSystemFont, 'Avenir Next', Avenir, Helvetica, Arial, sans-serif;
+	--text-color: rgb(68,68,68);
+
+  --root-bg-color: black;
+}
+
+components {
+  anchor {
+    @state default {
+      color: var(--red);
+    }
+
+    @state hover {
+      color: color(var(--red) lightness(50%));
+      text-decoration: underline;
+    }
+
+    @state active {
+      color: color(var(--red) lightness(44%));
+    }
+
+    @state disabled {
+      color: var(--grey-n04);
+      text-decoration: none;
+    }
+  }
+}

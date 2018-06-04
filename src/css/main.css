@@ -1,0 +1,47 @@
+@chassis init;
+@chassis include anchor;
+
+.polymath {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  & > header {
+    flex: 0 0 61.8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 320px;
+
+    & .logo {
+      display: block;
+      max-width: 768px;
+      margin: 0 auto;
+
+      fill: white;
+    }
+  }
+
+  & main {
+    flex: 1 1 auto;
+
+    & .width-constraint {
+      @chassis font-size large;
+      text-align: center;
+    }
+  }
+
+  & > footer {
+    flex: 0 0 auto;
+
+    & .width-constraint {
+      display: flex;
+      justify-content: center;
+    }
+
+    & .copyright {
+      @chassis apply inline-block padding-y;
+      color: var(--grey-n04);
+    }
+  }
+}

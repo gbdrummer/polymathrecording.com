@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/gbdrummer/gbdrummer.github.io#readme",
   "dependencies": {
-    "@chassis/core": "^1.2.7"
+    "@chassis/core": "^1.2.7",
+    "@chassis/gulp": "^1.0.0",
+    "fs-extra": "^6.0.1",
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^2.6.4"
   }
 }
