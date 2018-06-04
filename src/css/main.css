@@ -6,6 +6,10 @@
   flex-direction: column;
   height: 100vh;
 
+  & .text-bold {
+    font-weight: bold;
+  }
+
   & > header {
     flex: 0 0 61.8%;
     display: flex;
@@ -15,10 +19,14 @@
 
     & .logo {
       display: block;
-      max-width: 768px;
       margin: 0 auto;
 
       fill: white;
+    }
+
+    & .message {
+      @chassis font-size large;
+      text-align: center;
     }
   }
 
@@ -26,8 +34,7 @@
     flex: 1 1 auto;
 
     & .width-constraint {
-      @chassis font-size large;
-      text-align: center;
+
     }
   }
 
