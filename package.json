@@ -1,0 +1,22 @@
+{
+  "name": "gbdrummer.github.io",
+  "version": "1.0.0",
+  "description": "Promo Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbdrummer/gbdrummer.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbdrummer/gbdrummer.github.io/issues"
+  },
+  "homepage": "https://github.com/gbdrummer/gbdrummer.github.io#readme",
+  "dependencies": {
+    "@chassis/core": "^1.2.7"
+  }
+}
