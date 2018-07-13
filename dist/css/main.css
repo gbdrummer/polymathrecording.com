@@ -1,0 +1,380 @@
+@charset "UTF-8";
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    line-height: 1.3827882373436318;
+    vertical-align: baseline;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+q, blockquote {
+    quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+    content: '';
+    content: none;
+}
+
+a img {
+    border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
+nav, section, summary {
+    display: block;
+}
+
+input, textarea, button {
+    font-size: inherit;
+    line-height: 1.3827882373436318;
+}
+
+.chassis .hidden, .chassis [hidden] {
+    display: none !important;
+}
+
+.chassis .invisible {
+    visibility: hidden !important;
+}
+
+.chassis .transparent {
+    opacity: 0 !important;
+}
+
+.chassis .text-normal {
+    font-style: normal !important;
+    -webkit-font-feature-settings: normal !important;
+            font-feature-settings: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+}
+
+.chassis .text-italic {
+    font-style: italic !important;
+}
+
+.chassis .text-oblique {
+    font-style: oblique !important;
+}
+
+.chassis .text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.chassis .text-small-caps {
+    -webkit-font-feature-settings: "c2sc" !important;
+            font-feature-settings: "c2sc" !important;
+    font-variant: small-caps !important;
+}
+
+.chassis .text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.chassis .text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.chassis .text-underline {
+    text-decoration: underline !important;
+}
+
+.chassis .text-strikethrough {
+    text-decoration: line-through !important;
+}
+
+.chassis .text-nowrap {
+    white-space: nowrap !important;
+}
+
+.chassis .width-constraint {
+    width: 100%;
+    min-width: 320px;
+    max-width: 768px;
+    margin: 0 auto;
+    padding-left: 6.18vw;
+    padding-right: 6.18vw;
+}
+
+@media screen and (max-width: 320px) {
+    .chassis .width-constraint {
+        padding-left: 19.776px;
+        padding-right: 19.776px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .chassis .width-constraint {
+        padding-left: 47.4624px;
+        padding-right: 47.4624px;
+    }
+}
+
+html.chassis {
+    font-size: 16px;
+}
+
+.chassis body {
+    min-width: 320px;
+    font-family: initial;
+    font-family: -apple-system,
+                 BlinkMacSystemFont,
+                 'Avenir Next',
+                 Avenir,
+                 Helvetica,
+                 Arial,
+                 sans-serif;
+    color: initial;
+    color: rgb(68, 68, 68);
+}
+
+.chassis h1 {
+    font-size: 1.618033988749895em;
+    line-height: 1.337195101796658;
+    margin-bottom: .8264320225002101em;
+}
+
+.chassis h2 {
+    font-size: 1.272019649514069em;
+    line-height: 1.354610129921921;
+    margin-bottom: .837195101796658em;
+}
+
+.chassis h3 {
+    font-size: 1em;
+    line-height: 1.3827882373436318;
+    margin-bottom: .854610129921921em;
+}
+
+.chassis h4 {
+    font-size: .7861513777574233em;
+    line-height: 1.4283813728906054;
+    margin-bottom: .8827882373436318em;
+}
+
+.chassis h5 {
+    font-size: .7861513777574233em;
+    line-height: 1.4283813728906054;
+    margin-bottom: .8827882373436318em;
+}
+
+.chassis h6 {
+    font-size: .7861513777574233em;
+    line-height: 1.4283813728906054;
+    margin-bottom: .8827882373436318em;
+}
+
+.chassis legend {
+    font-size: 20.352px;
+    font-size: 1.272019649514069rem;
+    line-height: 1.354610129921921;
+    margin-bottom: .837195101796658em;
+}
+
+.chassis section, .chassis nav, .chassis form {
+    margin-bottom: 2.237398367265553em;
+}
+
+.chassis nav section, .chassis section nav, .chassis nav nav, .chassis article,
+.chassis fieldset, .chassis figure, .chassis pre, .chassis blockquote,
+.chassis table, .chassis canvas, .chassis embed {
+    margin-bottom: 1.3827882373436318em;
+}
+
+.chassis p {
+    margin-bottom: 1.3827882373436318em;
+}
+
+@media screen and (min-width: 320px) {
+    html.chassis {
+        line-height: 1.5303307232810004;
+    }
+
+    .chassis body {
+        line-height: 1.5303307232810004;
+    }
+
+    .chassis h1 {
+        line-height: 1.3935513166400795;
+        margin-bottom: .861262078750736em;
+    }
+
+    .chassis h2 {
+        line-height: 1.4457964010158681;
+        margin-bottom: .8935513166400796em;
+    }
+
+    .chassis h3 {
+        line-height: 1.5303307232810004;
+        margin-bottom: .9457964010158683em;
+    }
+
+    .chassis h4 {
+        line-height: 1.667110129921921;
+        margin-bottom: 1.0303307232810004em;
+    }
+
+    .chassis h5 {
+        line-height: 1.667110129921921;
+        margin-bottom: 1.0303307232810004em;
+    }
+
+    .chassis h6 {
+        line-height: 1.667110129921921;
+        margin-bottom: 1.0303307232810004em;
+    }
+
+    .chassis legend {
+        line-height: 1.4457964010158681;
+        margin-bottom: .8935513166400796em;
+    }
+
+    .chassis section, .chassis nav, .chassis form {
+        margin-bottom: 2.4761271242968688em;
+    }
+
+    .chassis nav section, .chassis section nav, .chassis nav nav,
+    .chassis article, .chassis fieldset, .chassis figure, .chassis pre,
+    .chassis blockquote, .chassis table, .chassis canvas, .chassis embed {
+        margin-bottom: 1.5303307232810004em;
+    }
+
+    .chassis p {
+        margin-bottom: 1.5303307232810004em;
+        line-height: 1.5303307232810004;
+    }
+}
+
+.chassis a {
+    color: inherit;
+    margin: 0;
+    opacity: 1;
+    padding: 0;
+    text-decoration: none;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+    -webkit-text-decoration-style: solid;
+            text-decoration-style: solid;
+    -webkit-text-decoration-color: currentColor;
+            text-decoration-color: currentColor;
+    text-shadow: none;
+    text-transform: none;
+    unicode-bidi: normal;
+    vertical-align: baseline;
+    visibility: visible;
+    white-space: normal;
+    word-spacing: normal;
+}
+
+.chassis a {
+    color: rgb(200, 57, 57);
+}
+
+.chassis a:hover {
+    color: rgb(200, 57, 57);
+    text-decoration: underline;
+}
+
+.chassis a:active {
+    color: rgb(176, 48, 48);
+}
+
+.chassis a:disabled, .chassis a.disabled {
+    cursor: default;
+    pointer-events: none;
+    color: rgb(188, 189, 193);
+    text-decoration: none;
+}
+
+.chassis .polymath {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    height: 100vh;
+}
+
+.chassis .polymath .text-bold {
+    font-weight: bold;
+}
+
+.chassis .polymath > header {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 61.8vh;
+    padding: 6.18vh 0;
+}
+
+.chassis .polymath > header .logo {
+    display: block;
+    margin: 0 auto;
+    fill: white;
+}
+
+.chassis .polymath > header .message {
+    font-size: 20.352px;
+    font-size: 1.272019649514069rem;
+    text-align: center;
+}
+
+.chassis .polymath main {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+}
+
+.chassis .polymath > footer {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+}
+
+.chassis .polymath > footer .width-constraint {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.chassis .polymath > footer .copyright {
+    padding-top: .6360098247570346em;
+    padding-bottom: .6360098247570346em;
+    color: rgb(188, 189, 193);
+}
+
+/*# sourceMappingURL=main.css.map */
