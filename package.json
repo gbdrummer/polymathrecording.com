@@ -19,8 +19,11 @@
   "dependencies": {
     "@chassis/core": "^1.2.7",
     "@chassis/gulp": "^1.0.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "fs-extra": "^6.0.1",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
     "gulp-sourcemaps": "^2.6.4"
   }
 }

@@ -1,3 +1,4 @@
+const babel = require('gulp-babel')
 const chassis = require('@chassis/gulp')
 const fs = require('fs-extra')
 const gulp = require('gulp')
@@ -51,7 +52,12 @@ gulp.task('css', ['clean-css'], next => {
 })
 
 gulp.task('js', ['clean-js'], next => {
-  return gulp.src(Source.js).pipe(gulp.dest(destRootPath))
+  return gulp.src(Source.js)
+    .pipe(babel({
+      presets: ['env'],
+      compact: false
+    }))
+    .pipe(gulp.dest(destRootPath))
 })
 
 gulp.task('watch', () => {
