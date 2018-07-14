@@ -44,7 +44,7 @@ gulp.task('css', ['clean-css'], next => {
       theme: path.join(srcRootPath, 'main.theme'),
     	layout: {
     		minWidth: 320,
-    		maxWidth: 768
+    		maxWidth: 2048
     	}
     }))
     .pipe(sourcemaps.write('.'))

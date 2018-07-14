@@ -1,15 +1,18 @@
 custom-properties {
   --red: rgb(200,57,57);
+  --blue: rgb(16,35,55);
 
 	--font-family: -apple-system, BlinkMacSystemFont, 'Avenir Next', Avenir, Helvetica, Arial, sans-serif;
 	--text-color: rgb(68,68,68);
+}
 
-  --root-bg-color: black;
+h2 {
+  font-weight: bold;
 }
 
 components {
   anchor {
-    @state default {
+    @state initial {
       color: var(--red);
     }
 
@@ -27,4 +30,31 @@ components {
       text-decoration: none;
     }
   }
+
+  button {
+		@state initial {
+			background: var(--blue);
+			color: white;
+
+			svg.icon {
+				stroke: currentColor;
+			}
+		}
+
+    @state hover {
+
+		}
+
+		@state active {
+
+		}
+
+		@state disabled {
+			opacity: .382;
+		}
+
+		@state focus {
+			outline: 0;
+		}
+	}
 }

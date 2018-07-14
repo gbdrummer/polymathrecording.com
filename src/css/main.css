@@ -1,55 +1,32 @@
 @chassis init;
-@chassis include anchor;
+@chassis include anchor button;
 
 .polymath {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 
-  & .text-bold {
-    font-weight: bold;
-  }
+  @chassis import components;
+  @chassis import modifiers;
 
-  & > header {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 61.8vh;
-    padding: 6.18vh 0;
-
-    & .logo {
-      display: block;
-      margin: 0 auto;
-
-      fill: white;
-    }
-
-    & .message {
-      @chassis font-size large;
-      text-align: center;
-    }
-  }
+  @chassis import layout/header;
+  @chassis import layout/footer;
 
   & main {
-    flex: 1 1 auto;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    & .width-constraint {
+    & .content {
+      margin: 0;
+      padding: 6.18vh 0;
 
+      & .width-constraint {
+        max-width: 1440px;
+      }
     }
-  }
 
-  & > footer {
-    flex: 0 0 auto;
-
-    & .width-constraint {
-      display: flex;
-      justify-content: center;
-    }
-
-    & .copyright {
-      @chassis apply inline-block padding-y;
-      color: var(--grey-n04);
-    }
+    @chassis import layout/sections;
   }
 }

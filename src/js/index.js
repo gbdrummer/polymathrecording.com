@@ -1,6 +1,6 @@
 NGNX.Loader({
   sync: [
-    './js/registries/main.js',
+    './js/registries/site.js',
     './js/registries/footer.js'
   ]
 }, () => {})

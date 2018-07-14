@@ -1,6 +1,6 @@
 const Footer = new NGNX.VIEW.Registry({
-  parent: Main,
-  selector: '> footer',
+  parent: Site,
+  selector: 'main > footer',
   namespace: 'footer.',
 
   references: {
