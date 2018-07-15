@@ -509,7 +509,7 @@ html.chassis {
     }
 }
 
-.chassis a {
+.chassis .polymath main .hero .title nav > a, .chassis a {
     color: inherit;
     margin: 0;
     opacity: 1;
@@ -530,7 +530,8 @@ html.chassis {
     word-spacing: normal;
 }
 
-.chassis button, .chassis .polymath main .hero .toolbar button {
+.chassis svg.icon, .chassis button,
+.chassis .polymath main .hero .toolbar button {
     background: transparent none repeat 0% 0% / auto auto padding-box border-box scroll;
     border: medium none currentColor;
     border-radius: 0;
@@ -577,6 +578,13 @@ html.chassis {
     pointer-events: none;
     color: rgb(188, 189, 193);
     text-decoration: none;
+}
+
+.chassis svg.icon {
+    width: auto;
+    height: 1.3827882373436318em;
+    vertical-align: middle;
+    pointer-events: none;
 }
 
 @media all and (-ms-high-contrast: none) {
@@ -675,6 +683,63 @@ html.chassis {
     align-items: center;
 }
 
+.chassis .polymath > footer {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+}
+
+.chassis .polymath > footer .social {
+    margin: 0;
+    padding: 1.18em 0;
+    background: rgb(96, 26, 26);
+}
+
+.chassis .polymath > footer .social nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.chassis .polymath > footer .social nav a {
+    display: block;
+    margin: 0 .9823784767414218em;
+    text-decoration: none;
+    opacity: .8;
+}
+
+.chassis .polymath > footer .social nav a:hover {
+    opacity: 1;
+}
+
+.chassis .polymath > footer .legal {
+    margin: 0;
+    padding: 3.82em 0;
+    background: rgb(44, 45, 48);
+    font-size: 12.578px;
+    font-size: .7861513777574233rem;
+    font-weight: 300;
+}
+
+.chassis .polymath > footer .legal .width-constraint {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.chassis .polymath > footer .legal .copyright {
+    padding-top: .6360098247570346em;
+    padding-bottom: .6360098247570346em;
+    color: rgb(148, 149, 153);
+}
+
 .chassis .polymath main {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 auto;
@@ -708,7 +773,6 @@ html.chassis {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
         flex-direction: column;
-    min-height: 38.2em;
     padding: 2em 0;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(2.36%, rgba(0, 36, 53, .23600000000000002)), to(transparent)),
                 rgb(16, 35, 55) url("../assets/images/hero.jpg") center center no-repeat;
@@ -730,6 +794,10 @@ html.chassis {
     padding: 1em;
 }
 
+.chassis .polymath main .hero .title {
+    margin-bottom: 16.18vh;
+}
+
 .chassis .polymath main .hero .title .width-constraint {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -742,27 +810,38 @@ html.chassis {
     align-items: center;
 }
 
+.chassis .polymath main .hero .title h1 {
+    margin: 0;
+}
+
 .chassis .polymath main .hero .title nav {
     -webkit-box-flex: 1;
-    -ms-flex: 1 0 auto;
-        flex: 1 0 auto;
+    -ms-flex: 1 1 20%;
+        flex: 1 1 20%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    padding-top: .6360098247570346em;
-    padding-right: .9823784767414218em;
-    padding-bottom: .6360098247570346em;
-    padding-left: .9823784767414218em;
+    margin: 0;
     font-size: 12.578px;
     font-size: .7861513777574233rem;
     border-bottom: 2px solid white;
 }
 
 .chassis .polymath main .hero .title nav > a {
+    padding-top: .6360098247570346em;
+    padding-right: .9823784767414218em;
+    padding-bottom: .6360098247570346em;
+    padding-left: .9823784767414218em;
     color: white;
     text-transform: uppercase;
+}
+
+.chassis .polymath main .hero .title nav > a:hover,
+.chassis .polymath main .hero .title nav > a.hover {
+    background: white;
+    color: rgb(16, 35, 55);
 }
 
 .chassis .polymath main .hero .tagline {
@@ -782,7 +861,7 @@ html.chassis {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin: 0;
+    margin-bottom: 6.18vh;
 }
 
 .chassis .polymath main .hero .tagline .width-constraint {
@@ -803,19 +882,42 @@ html.chassis {
 
 .chassis .polymath main .hero .tagline .line {
     text-shadow: 0 0 .618em black;
+    text-align: center;
 }
 
-.chassis .polymath main .hero .tagline .line.top {
-    font-size: 20.352px;
-    font-size: 1.272019649514069rem;
+.chassis .polymath main .hero .tagline .line.main {
+    font-size: 41.888px;
+    font-size: 2.618033988749895rem;
+    margin-bottom: .236em;
+    line-height: normal;
+}
+
+.chassis .polymath main .hero .tagline .line.main span {
+    line-height: normal;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .chassis .polymath main .hero .tagline .line.main {
+        font-size: 3.6181229724523547rem;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .chassis .polymath main .hero .tagline .line.main {
+        font-size: 5.23606797749979rem;
+    }
+}
+
+.chassis .polymath main .hero .tagline .line.secondary {
     text-transform: uppercase;
-    font-weight: lighter;
+    font-weight: 300;
     letter-spacing: .236em;
 }
 
-.chassis .polymath main .hero .tagline .line.bottom {
-    font-size: 83.777px;
-    font-size: 5.23606797749979rem;
+@media screen and (min-width: 768px) {
+    .chassis .polymath main .hero .tagline .line.secondary {
+        font-size: 1.272019649514069rem;
+    }
 }
 
 .chassis .polymath main .hero .toolbar .width-constraint {
@@ -829,8 +931,8 @@ html.chassis {
 
 .chassis .polymath main .hero .toolbar button {
     opacity: .8;
-    -webkit-box-shadow: inset 0 0 0 2px white, 0 0 2em 1em rgba(0, 0, 0, .16);
-            box-shadow: inset 0 0 0 2px white, 0 0 2em 1em rgba(0, 0, 0, .16);
+    -webkit-box-shadow: inset 0 0 0 2px rgb(105, 156, 211), 0 0 2em 1em rgba(0, 0, 0, .16);
+            box-shadow: inset 0 0 0 2px rgb(105, 156, 211), 0 0 2em 1em rgba(0, 0, 0, .16);
 }
 
 .chassis .polymath main .hero .toolbar button:hover,
@@ -840,20 +942,18 @@ html.chassis {
             box-shadow: inset 0 0 0 2px white, 0 0 2em 1em rgba(0, 0, 0, .23);
 }
 
-.chassis .polymath main .intro .width-constraint {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.chassis .polymath main .intro .width-constraint .column {
-    margin: 0;
+.chassis .polymath main .intro {
+    color: rgb(128, 128, 128);
 }
 
 .chassis .polymath main .intro .width-constraint .column.welcome {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 61.8%;
         flex: 1 1 61.8%;
+}
+
+.chassis .polymath main .intro .width-constraint .column.welcome h2 {
+    color: rgb(68, 68, 68);
 }
 
 .chassis .polymath main .intro .width-constraint .column.welcome > *:last-child {
@@ -866,34 +966,36 @@ html.chassis {
         flex: 1 1 38.2%;
 }
 
-.chassis .polymath main .intro .width-constraint .column:last-child {
-    margin-left: 11.8%;
+.chassis .polymath main .intro .width-constraint .column.info h3 {
+    color: rgb(68, 68, 68);
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
-.chassis .polymath main .legal {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-    margin: 0;
-    padding: 3.82em 0;
-    background: rgb(16, 35, 55);
-    font-size: 12.578px;
-    font-size: .7861513777574233rem;
+.chassis .polymath main .intro .width-constraint .column.info ul {
+    list-style-type: disc;
 }
 
-.chassis .polymath main .legal .width-constraint {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+.chassis .polymath main .intro .width-constraint .column.info ul li {
+    margin-left: 1em;
 }
 
-.chassis .polymath main .legal .copyright {
-    padding-top: .6360098247570346em;
-    padding-bottom: .6360098247570346em;
-    color: rgb(188, 189, 193);
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .intro .width-constraint .column {
+        margin: 0;
+    }
+
+    .chassis .polymath main .intro .width-constraint .column:last-child {
+        margin-left: 11.8%;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .intro .width-constraint {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
 }
 
 /*# sourceMappingURL=main.css.map */

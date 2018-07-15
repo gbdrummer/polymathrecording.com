@@ -2,7 +2,7 @@
 
 var Footer = new NGNX.VIEW.Registry({
   parent: Site,
-  selector: 'main > footer',
+  selector: '> footer',
   namespace: 'footer.',
 
   references: {

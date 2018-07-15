@@ -1,5 +1,5 @@
 @chassis init;
-@chassis include anchor button;
+@chassis include anchor button svg-icon;
 
 .polymath {
   display: flex;
