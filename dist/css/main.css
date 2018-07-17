@@ -164,6 +164,8 @@ html.chassis {
     font-size: 1em;
     line-height: 1.3827882373436318;
     margin-bottom: .854610129921921em;
+    font-weight: bold;
+    color: rgb(68, 68, 68);
 }
 
 .chassis h4 {
@@ -664,6 +666,10 @@ html.chassis {
     font-weight: bold;
 }
 
+.chassis .polymath .text-light {
+    font-weight: 300;
+}
+
 .chassis .polymath > header {
     padding-top: .6360098247570346em;
     padding-bottom: .6360098247570346em;
@@ -759,6 +765,8 @@ html.chassis {
 .chassis .polymath main .content {
     margin: 0;
     padding: 6.18vh 0;
+    font-weight: 300;
+    letter-spacing: .0382em;
 }
 
 .chassis .polymath main .content .width-constraint {
@@ -886,9 +894,10 @@ html.chassis {
 }
 
 .chassis .polymath main .hero .tagline .line.main {
+    margin-bottom: .5em;
+    padding-bottom: .318em;
     font-size: 41.888px;
     font-size: 2.618033988749895rem;
-    margin-bottom: .236em;
     line-height: normal;
 }
 
@@ -995,6 +1004,29 @@ html.chassis {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+    }
+}
+
+.chassis .polymath main .how-it-works {
+    color: white;
+    background: rgb(16, 35, 55);
+}
+
+.chassis .polymath main .how-it-works ol {
+    list-style-type: decimal;
+}
+
+.chassis .polymath main .how-it-works ol li {
+    margin-left: 1em;
+}
+
+.chassis .polymath main .how-it-works ol li h3 {
+    color: currentColor;
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .how-it-works .width-constraint {
+        padding-left: 38.2%;
     }
 }
 

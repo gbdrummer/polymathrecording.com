@@ -21,6 +21,8 @@
     & .content {
       margin: 0;
       padding: 6.18vh 0;
+      font-weight: 300;
+      letter-spacing: .0382em;
 
       & .width-constraint {
         max-width: 1440px;
