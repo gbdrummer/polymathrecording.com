@@ -157,15 +157,12 @@ html.chassis {
     font-size: 1.272019649514069em;
     line-height: 1.354610129921921;
     margin-bottom: .837195101796658em;
-    font-weight: bold;
 }
 
 .chassis h3 {
     font-size: 1em;
     line-height: 1.3827882373436318;
     margin-bottom: .854610129921921em;
-    font-weight: bold;
-    color: rgb(68, 68, 68);
 }
 
 .chassis h4 {
@@ -662,6 +659,17 @@ html.chassis {
     min-height: 100vh;
 }
 
+.chassis .polymath h2 {
+    font-size: 25.888px;
+    font-size: 1.618033988749895rem;
+    font-weight: bold;
+}
+
+.chassis .polymath h3 {
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+}
+
 .chassis .polymath .text-bold {
     font-weight: bold;
 }
@@ -778,7 +786,13 @@ html.chassis {
 }
 
 .chassis .polymath main > .content .width-constraint {
-    max-width: 1440px;
+    max-width: 1200px;
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main > .content .content {
+        font-size: .7861513777574233rem;
+    }
 }
 
 .chassis .polymath main .hero {
@@ -789,6 +803,7 @@ html.chassis {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
         flex-direction: column;
+    margin: 0;
     padding: 2em 0;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(2.36%, rgb(0, 82, 121)), to(transparent)),
                 radial-gradient(ellipse at center, rgba(214, 214, 214, 0) 0%, rgba(0, 0, 0, .38) 50%, rgba(255, 255, 255, 0) 100%),
@@ -1039,8 +1054,8 @@ html.chassis {
 
 .chassis .polymath main .intro .width-constraint .column.welcome {
     -webkit-box-flex: 1;
-    -ms-flex: 1 1 61.8%;
-        flex: 1 1 61.8%;
+    -ms-flex: 1 1 75%;
+        flex: 1 1 75%;
 }
 
 .chassis .polymath main .intro .width-constraint .column.welcome h2 {
@@ -1053,19 +1068,14 @@ html.chassis {
 
 .chassis .polymath main .intro .width-constraint .column.info {
     -webkit-box-flex: 1;
-    -ms-flex: 1 1 38.2%;
-        flex: 1 1 38.2%;
+    -ms-flex: 1 1 25%;
+        flex: 1 1 25%;
 }
 
 .chassis .polymath main .intro .width-constraint .column.info h3 {
     color: rgb(68, 68, 68);
     text-transform: uppercase;
     font-weight: 300;
-}
-
-.chassis .polymath main .intro .width-constraint .column.info .content {
-    font-size: 12.578px;
-    font-size: .7861513777574233rem;
 }
 
 .chassis .polymath main .intro .width-constraint .column.info ul {
@@ -1096,7 +1106,13 @@ html.chassis {
 
 .chassis .polymath main .how-it-works {
     color: white;
-    background: rgb(16, 35, 55);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(2.36%, rgb(0, 46, 68)), to(transparent)),
+                radial-gradient(ellipse at center, rgba(214, 214, 214, 0) 0%, rgba(0, 0, 0, .38) 50%, rgba(255, 255, 255, 0) 100%),
+                rgb(16, 35, 55) url("../assets/images/how-it-works.jpg") center center no-repeat;
+    background: linear-gradient(rgb(0, 46, 68) 2.36%, transparent 100%),
+                radial-gradient(ellipse at center, rgba(214, 214, 214, 0) 0%, rgba(0, 0, 0, .38) 50%, rgba(255, 255, 255, 0) 100%),
+                rgb(16, 35, 55) url("../assets/images/how-it-works.jpg") center center no-repeat;
+    background-size: cover;
 }
 
 .chassis .polymath main .how-it-works ol {

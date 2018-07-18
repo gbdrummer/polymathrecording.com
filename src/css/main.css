@@ -6,6 +6,7 @@
   flex-direction: column;
   min-height: 100vh;
 
+  @chassis import headings;
   @chassis import components;
   @chassis import modifiers;
 
@@ -25,7 +26,13 @@
       letter-spacing: .0382em;
 
       & .width-constraint {
-        max-width: 1440px;
+        max-width: 1200px;
+      }
+
+      @chassis viewport-width > small {
+        & .content {
+          @chassis font-size small;
+        }
       }
     }
 
