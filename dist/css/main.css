@@ -748,6 +748,16 @@ html.chassis {
 }
 
 .chassis .polymath > footer .legal .width-constraint {
+    text-align: center;
+}
+
+.chassis .polymath > footer .legal .copyright {
+    padding-top: .6360098247570346em;
+    padding-bottom: .6360098247570346em;
+    color: rgb(148, 149, 153);
+}
+
+.chassis .polymath > footer .legal nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -756,10 +766,17 @@ html.chassis {
     justify-content: center;
 }
 
-.chassis .polymath > footer .legal .copyright {
-    padding-top: .6360098247570346em;
-    padding-bottom: .6360098247570346em;
-    color: rgb(148, 149, 153);
+.chassis .polymath > footer .legal nav a {
+    margin: 0 .9823784767414218em;
+    color: white;
+}
+
+.chassis .polymath > footer .legal nav a:first-child {
+    margin-left: 0;
+}
+
+.chassis .polymath > footer .legal nav a:last-child {
+    margin-right: 0;
 }
 
 .chassis .polymath main {
@@ -922,6 +939,7 @@ html.chassis {
 
     .chassis .polymath main .hero > header nav a:hover {
         background: white;
+        border-radius: .236em .236em 0 0;
         color: rgb(16, 35, 55);
     }
 
