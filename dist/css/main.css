@@ -511,7 +511,7 @@ html.chassis {
     }
 }
 
-.chassis .polymath main .hero .title nav > a, .chassis a {
+.chassis .polymath main .hero > header nav > a, .chassis a {
     color: inherit;
     margin: 0;
     opacity: 1;
@@ -722,6 +722,14 @@ html.chassis {
     opacity: 1;
 }
 
+.chassis .polymath > footer .social nav a:first-child {
+    margin-left: 0;
+}
+
+.chassis .polymath > footer .social nav a:last-child {
+    margin-right: 0;
+}
+
 .chassis .polymath > footer .legal {
     margin: 0;
     padding: 3.82em 0;
@@ -762,14 +770,14 @@ html.chassis {
     justify-content: space-between;
 }
 
-.chassis .polymath main .content {
+.chassis .polymath main > .content {
     margin: 0;
-    padding: 6.18vh 0;
+    padding: 11.8vh 0;
     font-weight: 300;
     letter-spacing: .0382em;
 }
 
-.chassis .polymath main .content .width-constraint {
+.chassis .polymath main > .content .width-constraint {
     max-width: 1440px;
 }
 
@@ -782,74 +790,149 @@ html.chassis {
     -ms-flex-direction: column;
         flex-direction: column;
     padding: 2em 0;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(2.36%, rgba(0, 36, 53, .23600000000000002)), to(transparent)),
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(2.36%, rgb(0, 82, 121)), to(transparent)),
+                radial-gradient(ellipse at center, rgba(214, 214, 214, 0) 0%, rgba(0, 0, 0, .38) 50%, rgba(255, 255, 255, 0) 100%),
                 rgb(16, 35, 55) url("../assets/images/hero.jpg") center center no-repeat;
-    background: linear-gradient(rgba(0, 36, 53, .23600000000000002) 2.36%, transparent 100%),
+    background: linear-gradient(rgb(0, 82, 121) 2.36%, transparent 100%),
+                radial-gradient(ellipse at center, rgba(214, 214, 214, 0) 0%, rgba(0, 0, 0, .38) 50%, rgba(255, 255, 255, 0) 100%),
                 rgb(16, 35, 55) url("../assets/images/hero.jpg") center center no-repeat;
     background-size: cover;
     color: white;
 }
 
-.chassis .polymath main .hero .logo {
+.chassis .polymath main .hero > header {
+    margin-bottom: 11.8vh;
+}
+
+.chassis .polymath main .hero > header .width-constraint {
+    text-align: center;
+}
+
+.chassis .polymath main .hero > header .logo {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-    min-width: 180px;
+    min-width: 150px;
     width: 100%;
     max-width: 320px;
-    fill: rgb(16, 35, 55);
+    margin: 0 auto;
+    background: rgb(16, 35, 55);
+    border-radius: 0 0 .236em .236em;
+    -webkit-box-shadow: 0 0 23.6em 0 rgba(0, 41, 62, .618);
+            box-shadow: 0 0 23.6em 0 rgba(0, 41, 62, .618);
+    font-size: 12.578px;
+    font-size: .7861513777574233rem;
+    text-align: center;
+}
+
+.chassis .polymath main .hero > header .logo svg {
+    display: block;
+    max-width: 100%;
     background: white;
-    padding: 1em;
+    padding: 1.618em;
+    border-radius: .236em;
+    fill: rgb(16, 35, 55);
 }
 
-.chassis .polymath main .hero .title {
-    margin-bottom: 16.18vh;
+.chassis .polymath main .hero > header .logo .location {
+    padding-top: .6360098247570346em;
+    padding-right: .9823784767414218em;
+    padding-bottom: .6360098247570346em;
+    padding-left: .9823784767414218em;
+    border-top: 2px solid rgb(16, 35, 55);
+    letter-spacing: .118em;
 }
 
-.chassis .polymath main .hero .title .width-constraint {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .chassis .polymath main .hero > header .logo {
+        margin-bottom: 1em;
+    }
 }
 
-.chassis .polymath main .hero .title h1 {
-    margin: 0;
-}
-
-.chassis .polymath main .hero .title nav {
+.chassis .polymath main .hero > header nav {
     -webkit-box-flex: 1;
-    -ms-flex: 1 1 20%;
-        flex: 1 1 20%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -ms-flex: 1 1 38.2%;
+        flex: 1 1 38.2%;
+    display: none;
     -ms-flex-pack: distribute;
     justify-content: space-around;
     margin: 0;
     font-size: 12.578px;
     font-size: .7861513777574233rem;
-    border-bottom: 2px solid white;
 }
 
-.chassis .polymath main .hero .title nav > a {
-    padding-top: .6360098247570346em;
-    padding-right: .9823784767414218em;
-    padding-bottom: .6360098247570346em;
-    padding-left: .9823784767414218em;
+.chassis .polymath main .hero > header nav > a {
     color: white;
     text-transform: uppercase;
 }
 
-.chassis .polymath main .hero .title nav > a:hover,
-.chassis .polymath main .hero .title nav > a.hover {
-    background: white;
-    color: rgb(16, 35, 55);
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .chassis .polymath main .hero > header nav {
+        display: inline-block;
+        padding-top: .6360098247570346em;
+        padding-bottom: .6360098247570346em;
+    }
+
+    .chassis .polymath main .hero > header nav a {
+        margin: 0 .9823784767414218em;
+    }
+
+    .chassis .polymath main .hero > header nav a:hover {
+        text-decoration: underline;
+    }
+
+    .chassis .polymath main .hero > header nav.left a:first-child {
+        margin-left: 0;
+    }
+
+    .chassis .polymath main .hero > header nav.right a:last-child {
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .chassis .polymath main .hero > header nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        border-bottom: 2px solid white;
+    }
+
+    .chassis .polymath main .hero > header nav a {
+        padding-top: .6360098247570346em;
+        padding-right: .9823784767414218em;
+        padding-bottom: .6360098247570346em;
+        padding-left: .9823784767414218em;
+    }
+
+    .chassis .polymath main .hero > header nav a:hover {
+        background: white;
+        color: rgb(16, 35, 55);
+    }
+
+    .chassis .polymath main .hero > header nav.left {
+        -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+        order: -1;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .chassis .polymath main .hero > header {
+        margin-bottom: 16.18vh;
+    }
+
+    .chassis .polymath main .hero > header .width-constraint {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
 }
 
 .chassis .polymath main .hero .tagline {
@@ -895,7 +978,6 @@ html.chassis {
 
 .chassis .polymath main .hero .tagline .line.main {
     margin-bottom: .5em;
-    padding-bottom: .318em;
     font-size: 41.888px;
     font-size: 2.618033988749895rem;
     line-height: normal;
@@ -913,7 +995,7 @@ html.chassis {
 
 @media screen and (min-width: 1025px) {
     .chassis .polymath main .hero .tagline .line.main {
-        font-size: 5.23606797749979rem;
+        font-size: 4.23597899379733rem;
     }
 }
 
@@ -979,6 +1061,11 @@ html.chassis {
     color: rgb(68, 68, 68);
     text-transform: uppercase;
     font-weight: 300;
+}
+
+.chassis .polymath main .intro .width-constraint .column.info .content {
+    font-size: 12.578px;
+    font-size: .7861513777574233rem;
 }
 
 .chassis .polymath main .intro .width-constraint .column.info ul {

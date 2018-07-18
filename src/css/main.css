@@ -18,9 +18,9 @@
     flex-direction: column;
     justify-content: space-between;
 
-    & .content {
+    & > .content {
       margin: 0;
-      padding: 6.18vh 0;
+      padding: 11.8vh 0;
       font-weight: 300;
       letter-spacing: .0382em;
 
