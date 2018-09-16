@@ -1,5 +1,5 @@
 @chassis init;
-@chassis include anchor button svg-icon;
+@chassis include anchor anchor-button button svg-icon;
 
 .polymath {
   display: flex;
@@ -7,7 +7,6 @@
   min-height: 100vh;
 
   @chassis import headings;
-  @chassis import components;
   @chassis import modifiers;
 
   @chassis import layout/header;

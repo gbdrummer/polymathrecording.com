@@ -27,9 +27,38 @@ components {
     }
   }
 
+  anchor-button {
+		@state initial {
+			background: var(--blue);
+      border-radius: .236em;
+			color: white;
+
+			svg.icon {
+				stroke: currentColor;
+			}
+		}
+
+    @state hover {
+
+		}
+
+		@state active {
+
+		}
+
+		@state disabled {
+			opacity: .382;
+		}
+
+		@state focus {
+			outline: 0;
+		}
+	}
+
   button {
 		@state initial {
 			background: var(--blue);
+      border-radius: .236em;
 			color: white;
 
 			svg.icon {

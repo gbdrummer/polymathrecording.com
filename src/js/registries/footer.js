@@ -18,5 +18,7 @@ const Footer = new NGNX.VIEW.Registry({
     })
 
     this.emit('copyright-year.set')
+
+    Site.footer = this.self.element
   }
 })

@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Polymath Music Productions</title>
+    <title>Polymath Recording</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36384378-4"></script>
@@ -15,83 +15,87 @@
 
     <script src="//cdn.author.io/ngn/1.3.15/legacy.complete.min.js"></script>
     <script src="//cdn.author.io/ngnx/1.7.13/complete.min.js"></script>
+
+    <script src="assets/polyfills/webcomponents/custom-elements-es5-adapter.js"></script>
+    <script src="assets/polyfills/webcomponents/webcomponents-lite.js"></script>
+
+    <script src="assets/webcomponents/chassis-cycle-es5.js"></script>
   </head>
 
   <body class="polymath">
 
     <header>
       <div class="width-constraint">
-        <h1>Polymath Music Productions</h1>
+        <h1>Polymath Recording</h1>
       </div>
     </header>
 
     <main>
-      <section class="hero">
+
+      <div class="splash">
         <header>
           <div class="width-constraint">
+            <nav class="left">
+              <a href="/services">Services &amp; Rates</a>
+              <a href="/gear">Gear List</a>
+            </nav>
+            <nav class="right">
+              <a href="/samples">Audio Samples</a>
+              <a href="/contact">Contact Us</a>
+            </nav>
             <div class="logo">
               <svg src="assets/images/logo_subheading.svg"></svg>
               <div class="location">Los Angeles, CA</div>
             </div>
-            <nav class="left">
-              <a href="#">How we work</a>
-              <a href="#">Artists</a>
-            </nav>
-            <nav class="right">
-              <a href="#">Blog</a>
-              <a href="#">Contact</a>
-            </nav>
           </div>
         </header>
 
-        <section class="tagline">
-          <div class="width-constraint">
-            <div class="main line">
-              <span class="text-light">Serious about <span class="text-nowrap">your music?</span></span><br>
-              <span class="text-semibold">So are we.</span>
-            </div>
-            <div class="secondary line">
-              We'll help you get the<br><span class="text-nowrap">most out of it.</span>
-            </div>
+        <section class="hero">
+          <chassis-cycle class="slider">
+            <div class="slide" active style="background-image: url('../assets/images/hero/hero.jpg')"></div>
+          </chassis-cycle>
 
-            <!-- <div class="main line">
-              <span class="text-nowrap">Make the most</span> <span class="text-nowrap">of your music</span>
-            </div>
-            <div class="secondary line">
-              <span class="text-nowrap">Recording Consultation</span> <span class="text-nowrap">&amp; Production</span>
-            </div> -->
-          </div>
-        </section>
+          <!-- <section class="tagline">
+            <div class="width-constraint">
+              <div class="main line">
+                Recording, <span class="nowrap">Mixing &amp; Mastering</span>
+              </div>
+              <div class="secondary line">
+                State of the art<br>
 
-        <section class="toolbar">
-          <div class="width-constraint">
-            <button class="pill">Book a consultation</button>
-          </div>
+              </div>
+            </div>
+          </section> -->
+
+          <!-- <section class="toolbar">
+            <div class="width-constraint">
+              <button>Schedule a session</button>
+            </div>
+          </section> -->
         </section>
-      </section>
+      </div>
 
       <section class="intro content">
         <div class="width-constraint">
           <section class="welcome column">
             <h2>
-              We specialize in helping our clients record their music to its fullest potential without breaking the bank.
+              Record your music in a creative, flexible environment at the highest quality
             </h2>
 
             <div class="content">
               <p>
-                Recording can be an expensive and unpredictable process. We take the guesswork out of it with our unique approach to music production which delivers professional-quality results on budget and on schedule.
+                Our full service studio offers the best in recording, mixing and mastering services. Our goal is to provide an environment in which artists can be creative and productive, and to bring out the absolute best in their music.
               </p>
 
               <p>
-                We work in a number of different studio facilities around Los Angeles, each of which differ in size and accommodation of certain types of projects. The largest and most-equipped facilities come at the highest cost. Most projects can be completed start-to-finish at any of these facilities, but because they each have their own strengths and limitations, we’ve found that using different facilities for different tasks leads to excellent results at the best possible price.
+                We've been helping our clients get the most out of their recordings since 2005, when producer, engineer and musician Graham Butler began working with artists in the Nashville area and later Chicago. Since 2012 he's made his home in Los Angeles.
               </p>
             </div>
 
-            <!-- <p>
-              We've been helping our clients get the most out of their recordings since 2005, when producer, engineer and musician Graham Butler began working with artists in the Nashville area and later Chicago. Since 2012 he's made his home in Los Angeles.
-            </p> -->
-            <!-- <a href="#">Find out how it works</a> -->
+            <a href="/gear">Listen to samples of our work</a> or <a href="/gear">check out our gear</a>
+
           </section>
+
           <section class="info column">
             <section class="services">
               <h3>Services</h3>
@@ -101,6 +105,21 @@
                 <li>Mastering</li>
                 <li>Composing &amp; Arranging</li>
                 <li>Session Musician Referrals</li>
+              </ul>
+
+              <a class="content" href="/services">
+                View Rates
+              </a>
+            </section>
+
+            <section class="certifications">
+              <h3>Certifications</h3>
+              <ul>
+                <li class="mastered-for-itunes">
+                  <a href="https://www.apple.com/itunes/mastered-for-itunes/" target="_blank">
+                    <img src="assets/images/mastered-for-itunes.png" alt="Mastered for iTunes">
+                  </a>
+                </li>
               </ul>
             </section>
 
@@ -208,11 +227,11 @@
       <section class="legal">
         <div class="width-constraint">
           <div class="copyright">
-            Copyright &copy; <span id="copyright_year" class="year"></span> Polymath Music Productions. <span class="text-nowrap">All rights reserved.</span>
+            Copyright &copy; <span id="copyright_year" class="year"></span> Polymath Recording. <span class="text-nowrap">All rights reserved.</span>
           </div>
           <nav>
             <a href="#">Privacy Policy</a>
-            <a href="#">Contact</a>
+            <a href="/contact">Contact</a>
           </nav>
         </div>
       </section>

@@ -1,9 +1,14 @@
 const Hero = new NGNX.VIEW.Registry({
   parent: Site,
-  selector: 'main > section.hero',
+  selector: 'main > .splash section.hero',
   namespace: 'hero.',
 
-  init () {
+  references: {
+    slider: '> .slider'
+  },
 
+  init () {
+    Site.hero = this.self.element
+    Site.slider = this.ref.slider.element
   }
 })
