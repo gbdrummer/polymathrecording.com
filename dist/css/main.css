@@ -1473,6 +1473,41 @@ html.chassis {
     color: white;
 }
 
+.chassis .polymath main .testimonials .yelp-review {
+    min-width: 0 !important;
+}
+
+@media screen and (max-width: 512px) {
+    .chassis .polymath main .testimonials .width.constraint {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .chassis .polymath main .testimonials .review {
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .testimonials .content {
+        display: flex;
+    }
+
+    .chassis .polymath main .testimonials .content .review {
+        flex: 1 1 calc(100% / 3);
+        padding: 0 .9823784767414218em;
+    }
+
+    .chassis .polymath main .testimonials .content .review:first-of-type {
+        padding-left: 0;
+    }
+
+    .chassis .polymath main .testimonials .content .review:last-of-type {
+        padding-right: 0;
+    }
+}
+
 .chassis .polymath main > .contact {
     padding: 0;
 }
