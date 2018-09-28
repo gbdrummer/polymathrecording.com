@@ -20,19 +20,25 @@
 
     & > .content {
       margin: 0;
-      padding: 11.8vh 0;
+      padding: 6.18vh 0;
       font-weight: 300;
       letter-spacing: .0382em;
 
-      & .width-constraint {
+      & .width.constraint {
         max-width: 1200px;
       }
 
-      @chassis viewport-width > small {
+      @chassis vp-width > small {
+        padding: 11.8vh 0;
+
         & .content {
           @chassis font-size small;
         }
       }
+    }
+
+    & h2 {
+      text-align: center;
     }
 
     @chassis import layout/sections;

@@ -10,8 +10,8 @@ const srcRootPath = path.resolve('./src')
 const Source = {
   assets: path.join(srcRootPath, '/assets/**/*.*'),
   html: path.join(srcRootPath, '/**/*.html'),
-  css: path.join(srcRootPath, '/**/*.css'),
-  js: path.join(srcRootPath, '/**/*.js')
+  css: path.join(srcRootPath, '/css/**/*.css'),
+  js: path.join(srcRootPath, '/js/**/*.js')
 }
 
 const destRootPath = './dist'
@@ -48,7 +48,7 @@ gulp.task('css', ['clean-css'], next => {
     	}
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(destRootPath))
+    .pipe(gulp.dest(Dest.css))
 })
 
 gulp.task('js', ['clean-js'], next => {
@@ -57,7 +57,7 @@ gulp.task('js', ['clean-js'], next => {
       presets: ['env'],
       compact: false
     }))
-    .pipe(gulp.dest(destRootPath))
+    .pipe(gulp.dest(Dest.js))
 })
 
 gulp.task('watch', () => {

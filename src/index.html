@@ -8,9 +8,23 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36384378-4"></script>
-    <script src="js/analytics.js"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="preload" href="//www.123formbuilder.com/embed/3808165.js" as="script">
+    <link rel="preload" href="js/analytics.js" as="script">
+    <link rel="preload" href="js/index.js" as="script">
+
+    <link rel=“preload” href="../assets/images/hero/1.jpg" as="image">
+    <link rel=“preload” href="../assets/images/hero/2.jpg" as="image">
+    <link rel=“preload” href="../assets/images/hero/3.jpg" as="image">
+    <link rel=“preload” href="../assets/images/hero/4.jpg" as="image">
+
+    <link rel=“preload” href="../assets/images/studio/1.jpg" as="image">
+    <link rel=“preload” href="../assets/images/studio/2.jpg" as="image">
+    <link rel=“preload” href="../assets/images/studio/3.jpg" as="image">
+    <link rel=“preload” href="../assets/images/studio/4.jpg" as="image">
+    <link rel=“preload” href="../assets/images/studio/5.jpg" as="image">
+
+    <script src="js/analytics.js"></script>
     <link rel="stylesheet" href="/css/main.css">
 
     <script src="//cdn.author.io/ngn/1.3.15/legacy.complete.min.js"></script>
@@ -22,10 +36,10 @@
     <script src="assets/webcomponents/chassis-cycle-es5.js"></script>
   </head>
 
-  <body class="polymath">
+  <body class="polymath home">
 
     <header>
-      <div class="width-constraint">
+      <div class="width constraint">
         <h1>Polymath Recording</h1>
       </div>
     </header>
@@ -34,14 +48,14 @@
 
       <div class="splash">
         <header>
-          <div class="width-constraint">
+          <div class="width constraint">
             <nav class="left">
-              <a href="/services">Services &amp; Rates</a>
-              <a href="/gear">Gear List</a>
+              <a href="#" data-section="services">Services &amp; Rates</a>
+              <a href="#" data-section="gear">Gear List</a>
             </nav>
             <nav class="right">
-              <a href="/samples">Audio Samples</a>
-              <a href="/contact">Contact Us</a>
+              <a href="#" data-section="samples">Audio Samples</a>
+              <a href="#" data-section="contact">Contact Us</a>
             </nav>
             <div class="logo">
               <svg src="assets/images/logo_subheading.svg"></svg>
@@ -52,31 +66,17 @@
 
         <section class="hero">
           <chassis-cycle class="slider">
-            <div class="slide" active style="background-image: url('../assets/images/hero/hero.jpg')"></div>
+            <div class="slide" active style="background-image: url('../assets/images/hero/1.jpg')"></div>
+            <div class="slide" style="background-image: url('../assets/images/hero/2.jpg')"></div>
+            <div class="slide" style="background-image: url('../assets/images/hero/3.jpg')"></div>
+            <div class="slide" style="background-image: url('../assets/images/hero/4.jpg')"></div>
+            <div class="slide" style="background-image: url('../assets/images/hero/5.jpg')"></div>
           </chassis-cycle>
-
-          <!-- <section class="tagline">
-            <div class="width-constraint">
-              <div class="main line">
-                Recording, <span class="nowrap">Mixing &amp; Mastering</span>
-              </div>
-              <div class="secondary line">
-                State of the art<br>
-
-              </div>
-            </div>
-          </section> -->
-
-          <!-- <section class="toolbar">
-            <div class="width-constraint">
-              <button>Schedule a session</button>
-            </div>
-          </section> -->
         </section>
       </div>
 
-      <section class="intro content">
-        <div class="width-constraint">
+      <section id="services" class="intro content">
+        <div class="width constraint">
           <section class="welcome column">
             <h2>
               Record your music in a creative, flexible environment at the highest quality
@@ -92,7 +92,16 @@
               </p>
             </div>
 
-            <a href="/gear">Listen to samples of our work</a> or <a href="/gear">check out our gear</a>
+            <section class="certifications">
+              <h3>Certifications</h3>
+              <ul>
+                <li class="mastered-for-itunes">
+                  <a href="https://www.apple.com/itunes/mastered-for-itunes/" target="_blank">
+                    <img src="assets/images/mastered-for-itunes.png" alt="Mastered for iTunes">
+                  </a>
+                </li>
+              </ul>
+            </section>
 
           </section>
 
@@ -112,96 +121,145 @@
               </a>
             </section>
 
-            <section class="certifications">
-              <h3>Certifications</h3>
-              <ul>
-                <li class="mastered-for-itunes">
-                  <a href="https://www.apple.com/itunes/mastered-for-itunes/" target="_blank">
-                    <img src="assets/images/mastered-for-itunes.png" alt="Mastered for iTunes">
-                  </a>
-                </li>
-              </ul>
-            </section>
-
             <section class="phone">
               <h3>Contact</h3>
               <div class="content">
                 <a href="tel:+13238441645" class="phone text-nowrap">(323) 844-1645</a><br>
-                <a href="http://www.123formbuilder.com/form-3808165/Contact-Lead-Form" target="_blank">Email Us</a>
+                <a href="#" data-section="contact">Email Us</a>
               </div>
             </section>
-
-            <!-- <section class="location">
-              <h3>Location</h3>
-              <address class="content">
-                Sherman Oaks, CA<br>off Ventura &amp; Woodman
-              </address>
-            </section> -->
           </section>
         </div>
       </section>
 
-      <section class="how-it-works content">
-        <div class="width-constraint">
+      <section id="gallery" class="gallery content">
+        <div class="width constraint">
+          <button class="previous">
+            <svg src="../assets/icons/chevron-left.svg"></svg>
+          </button>
+          <chassis-cycle class="slider">
+            <div class="slide" active style="background-image: url('../assets/images/studio/1.jpg')"></div>
+            <div class="slide" style="background-image: url('../assets/images/studio/2.jpg')"></div>
+            <div class="slide" style="background-image: url('../assets/images/studio/3.jpg')"></div>
+            <div class="slide" style="background-image: url('../assets/images/studio/4.jpg')"></div>
+            <div class="slide" style="background-image: url('../assets/images/studio/5.jpg')"></div>
+          </chassis-cycle>
+
+          <button class="next">
+            <svg src="../assets/icons/chevron-right.svg"></svg>
+          </button>
+        </div>
+      </section>
+
+      <section id="gear" class="gear content">
+        <div class="width constraint">
           <h2>
-            How we work
+            Selected Gear
           </h2>
 
           <div class="content">
-            <ol>
-              <li>
+            <div class="row">
+              <section class="open collapsible mics column">
                 <h3>
-                  Consultation
+                  <svg class="down icon" src="assets/icons/chevron-down.svg"></svg>
+                  <svg class="right icon" src="assets/icons/chevron-right.svg"></svg>
+                  Microphones
                 </h3>
-                <p>
-                  We’ll have a short conversation with you about your goals for your project and your available budget.
-                </p>
-              </li>
-              <li>
+                <ul>
+                  <li>Neumann U87</li>
+                  <li>AKG C414 B-ULS (x3)</li>
+                  <li>Modified Oktava MK012 (x4)</li>
+                  <li>Modified Oktava MK319 (x2)</li>
+                  <li>Audio-Technica AT4081 Ribbon (x2)</li>
+                  <li>Beesneez Elly FET LDC</li>
+                  <li>Beesneez Lulu FET SDCs (x3)</li>
+                  <li>Shure KSM44</li>
+                  <li>AKG C3000 (x2)</li>
+                  <li>Sennheiser MD421 (x4)</li>
+                  <li>Shure SM57s (many)</li>
+                  <li>Shure SM7B</li>
+                  <li>Shure SM91 Boundary Mic</li>
+                  <li>more from Sony, Electrovoice, Audio-Technica, etc.</li>
+                </ul>
+              </section>
+
+              <section class="collapsible outboard column">
                 <h3>
-                  Planning
+                  <svg class="down icon" src="assets/icons/chevron-down.svg"></svg>
+                  <svg class="right icon" src="assets/icons/chevron-right.svg"></svg>
+                  Mic Pres &amp; Outboard
                 </h3>
-                <p>
-                  We’ll create a report detailing several different options for how to approach your project. In most cases, this report will include an option that exactly meets your budget, plus a couple more options above and below, along with detailed pros and cons for each. We’ll discuss and pick the best option for you. This will form the roadmap for the production process.
-                </p>
-              </li>
-              <li>
+                <ul>
+                  <li>API 3124+ mic pre</li>
+                  <li>Universal Audio 2-610 mic pre</li>
+                  <li>Line Audio 8MP mic pre</li>
+                  <li>Electrodyne 501 mic pre/DI</li>
+                  <li>16ch Presonus M80 pres <br>modified w/ Jensen Transformers</li>
+                  <li>Apogee AD/16 and Rosetta 800 Converters</li>
+                  <li>Modified Focusrite Red 3 <br>Dual Compressor/Limiter</li>
+                  <li>Modified Summit Audio <br>EQP-200 stereo EQ</li>
+                  <li>dbx 160XT compressor/limiter</li>
+                  <li>Rupert Neve Designs RNDI</li>
+                  <li>Creation Audio Labs MW1 DI/Reamp</li>
+                  <li>Yamaha SPX90II</li>
+                  <li>dbx Subharmonic Synth</li>
+                </ul>
+              </section>
+            </div>
+
+            <div class="row">
+              <section class="collapsible monitoring column">
                 <h3>
-                  Production
+                  <svg class="down icon" src="assets/icons/chevron-down.svg"></svg>
+                  <svg class="right icon" src="assets/icons/chevron-right.svg"></svg>
+                  Monitoring
                 </h3>
-                <p>
-                  Next, we’ll get to work making music! You’ll be able to focus on your music with confidence that your requirements will be met on schedule and within your budget.
-                </p>
-              </li>
-            </ol>
+                <ul>
+                  <li>Tannoy FSM Dual Concentric Mains w/ Hafler Amplifiers</li>
+                  <li>Manley ML10 Midfields</li>
+                  <li>Yamaha NS-10M Nearfields</li>
+                  <li>Focal CMS 65 Nearfields</li>
+                </ul>
+              </section>
+
+              <section class="collapsible software column">
+                <h3>
+                  <svg class="down icon" src="assets/icons/chevron-down.svg"></svg>
+                  <svg class="right icon" src="assets/icons/chevron-right.svg"></svg>
+                  Software
+                </h3>
+                <ul>
+                  <li>Pro Tools 2018</li>
+                  <li>Logic Pro X</li>
+                  <li>Digital Performer 9</li>
+                  <li>Many UAD2 Plugins</li>
+                  <li>Many soft-synths and sample libraries</li>
+                </ul>
+              </section>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="artists content">
-        <div class="width-constraint">
-          <h2>
-            Artists
-          </h2>
-        </div>
-      </section>
-
-      <section class="testimonials content">
-        <div class="width-constraint">
+      <section id="testimonials" class="testimonials content">
+        <div class="width constraint">
           <h2>
             Testimonials
           </h2>
         </div>
       </section>
 
-      <section class="booking content">
-        <div class="width-constraint">
-          <h2>
+      <section id="contact" class="contact content">
+        <div class="width constraint">
+          <h2 class="hidden">
             Get in touch
           </h2>
 
           <div class="content">
-            <button>Book a consultation</button>
+            <!-- Contact Form embed: www.123formbuilder.com -->
+            <script type="text/javascript" defer src="//www.123formbuilder.com/embed/3808165.js" data-role="form" data-default-width="650px"></script>
+
+            <!-- <button>Book a consultation</button> -->
           </div>
         </div>
       </section>
@@ -209,29 +267,29 @@
 
     <footer>
       <section class="social">
-        <div class="width-constraint">
+        <div class="width constraint">
           <nav>
-            <a href="#" target="_blank">
-              <svg class="icon" src="assets/images/icons/facebook.svg"></svg>
+            <a href="https://www.facebook.com/polymathrecording/" target="_blank">
+              <svg class="icon" src="assets/icons/facebook.svg"></svg>
+            </a>
+            <a href="https://www.yelp.com/biz/polymath-recording-los-angeles" target="_blank">
+              <svg class="icon" src="assets/icons/yelp.svg"></svg>
             </a>
             <a href="#" target="_blank">
-              <svg class="icon" src="assets/images/icons/twitter.svg"></svg>
-            </a>
-            <a href="#" target="_blank">
-              <svg class="icon" src="assets/images/icons/instagram.svg"></svg>
+              <svg class="icon" src="assets/icons/instagram.svg"></svg>
             </a>
           </nav>
         </div>
       </section>
 
       <section class="legal">
-        <div class="width-constraint">
+        <div class="width constraint">
           <div class="copyright">
             Copyright &copy; <span id="copyright_year" class="year"></span> Polymath Recording. <span class="text-nowrap">All rights reserved.</span>
           </div>
           <nav>
             <a href="#">Privacy Policy</a>
-            <a href="/contact">Contact</a>
+            <a href="#" data-section="contact">Contact</a>
           </nav>
         </div>
       </section>

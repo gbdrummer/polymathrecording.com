@@ -9,6 +9,7 @@ const Hero = new NGNX.VIEW.Registry({
 
   init () {
     Site.hero = this.self.element
-    Site.slider = this.ref.slider.element
+
+    setInterval(() => this.ref.slider.element.next(), 6180)
   }
 })

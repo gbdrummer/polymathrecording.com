@@ -1,8 +1,19 @@
 @charset "UTF-8";
 
+@-ms-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
 *, *:before, *:after {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
@@ -47,6 +58,47 @@ input, textarea, button {
     font-size: inherit;
     line-height: 1.3827882373436318;
 }
+
+:root {
+}
+@custom-media --min-vp screen and (min-width: 0px) and (max-width: 320px);
+@custom-media --min-vp-and-above screen and (min-width: 0px);
+@custom-media --above-min-vp screen and (min-width: 321px);
+@custom-media --below-tiny-vp screen and (max-width: 319px);
+@custom-media --tiny-vp-and-below screen and (max-width: 320px);
+@custom-media --tiny-vp screen and (min-width: 320px) and (max-width: 512px);
+@custom-media --tiny-vp-and-above screen and (min-width: 320px);
+@custom-media --above-tiny-vp screen and (min-width: 513px);
+@custom-media --below-small-vp screen and (max-width: 511px);
+@custom-media --small-vp-and-below screen and (max-width: 512px);
+@custom-media --small-vp screen and (min-width: 512px) and (max-width: 768px);
+@custom-media --small-vp-and-above screen and (min-width: 512px);
+@custom-media --above-small-vp screen and (min-width: 769px);
+@custom-media --below-medium-vp screen and (max-width: 767px);
+@custom-media --medium-vp-and-below screen and (max-width: 768px);
+@custom-media --medium-vp screen and (min-width: 768px) and (max-width: 1024px);
+@custom-media --medium-vp-and-above screen and (min-width: 768px);
+@custom-media --above-medium-vp screen and (min-width: 1025px);
+@custom-media --below-large-vp screen and (max-width: 1023px);
+@custom-media --large-vp-and-below screen and (max-width: 1024px);
+@custom-media --large-vp screen and (min-width: 1024px) and (max-width: 1200px);
+@custom-media --large-vp-and-above screen and (min-width: 1024px);
+@custom-media --above-large-vp screen and (min-width: 1201px);
+@custom-media --below-huge-vp screen and (max-width: 1199px);
+@custom-media --huge-vp-and-below screen and (max-width: 1200px);
+@custom-media --huge-vp screen and (min-width: 1200px) and (max-width: 1440px);
+@custom-media --huge-vp-and-above screen and (min-width: 1200px);
+@custom-media --above-huge-vp screen and (min-width: 1441px);
+@custom-media --below-massive-vp screen and (max-width: 1439px);
+@custom-media --massive-vp-and-below screen and (max-width: 1440px);
+@custom-media --massive-vp screen and (min-width: 1440px) and (max-width: 1600px);
+@custom-media --massive-vp-and-above screen and (min-width: 1440px);
+@custom-media --above-massive-vp screen and (min-width: 1601px);
+@custom-media --below-null-vp screen and (max-width: 1599px);
+@custom-media --null-vp-and-below screen and (max-width: 1600px);
+@custom-media --null-vp screen and (min-width: 1600px) and (max-width: 2048px);
+@custom-media --null-vp-and-above screen and (min-width: 1600px);
+@custom-media --above-null-vp screen and (min-width: 2049px);
 
 .chassis .hidden, .chassis [hidden] {
     display: none !important;
@@ -106,7 +158,16 @@ input, textarea, button {
     white-space: nowrap !important;
 }
 
-.chassis .width-constraint {
+.chassis .text-truncate {
+    overflow: hidden !important;
+}
+
+.chassis .text-ellipsis {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.chassis .constraint.width {
     width: 100%;
     min-width: 320px;
     max-width: 2048px;
@@ -116,16 +177,16 @@ input, textarea, button {
 }
 
 @media screen and (max-width: 320px) {
-    .chassis .width-constraint {
-        padding-left: 19.776px;
-        padding-right: 19.776px;
+    .chassis .constraint.width {
+        padding-left: calc(320px * 6.18 / 100);
+        padding-right: calc(320px * 6.18 / 100);
     }
 }
 
 @media screen and (min-width: 2048px) {
-    .chassis .width-constraint {
-        padding-left: 126.5664px;
-        padding-right: 126.5664px;
+    .chassis .constraint.width {
+        padding-left: calc(2048px * 6.18 / 100);
+        padding-right: calc(2048px * 6.18 / 100);
     }
 }
 
@@ -184,7 +245,6 @@ html.chassis {
 }
 
 .chassis legend {
-    font-size: 20.352px;
     font-size: 1.272019649514069rem;
     line-height: 1.354610129921921;
     margin-bottom: .837195101796658em;
@@ -559,17 +619,31 @@ html.chassis {
     word-spacing: normal;
 }
 
+@media screen and (min-width: 2048px) {
+    .chassis & .row {
+        padding-left: calc(2048px * 6.18 / 100);
+        padding-right: calc(2048px * 6.18 / 100);
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .chassis & .row {
+        padding-left: calc(320px * 6.18 / 100);
+        padding-right: calc(320px * 6.18 / 100);
+    }
+}
+
 .chassis a {
     color: rgb(200, 57, 57);
 }
 
 .chassis a:hover, .chassis a.hover {
-    color: rgb(200, 57, 57);
+    color: color(rgb(200, 57, 57) lightness(50%));
     text-decoration: underline;
 }
 
 .chassis a:active {
-    color: rgb(176, 48, 48);
+    color: color(rgb(200, 57, 57) lightness(44%));
 }
 
 .chassis a:disabled {
@@ -604,14 +678,8 @@ html.chassis {
 }
 
 .chassis button, .chassis .polymath main > .splash .hero .toolbar button {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     padding-top: .6360098247570346em;
     padding-right: .9823784767414218em;
@@ -629,11 +697,23 @@ html.chassis {
     color: white;
 }
 
-.chassis button svg.icon,
-.chassis .polymath main > .splash .hero .toolbar button svg.icon {
+.chassis button .icon,
+.chassis .polymath main > .splash .hero .toolbar button .icon {
+    height: calc(1.3827882373436318em - 2px);
+}
+
+.chassis button .left.icon,
+.chassis .polymath main > .splash .hero .toolbar button .left.icon {
+    order: -1;
     -webkit-transform: translateX(-0.4293858394957214em);
             transform: translateX(-0.4293858394957214em);
-    stroke: currentColor;
+}
+
+.chassis button .right.icon,
+.chassis .polymath main > .splash .hero .toolbar button .right.icon {
+    order: 99;
+    -webkit-transform: translateX(.4293858394957214em);
+            transform: translateX(.4293858394957214em);
 }
 
 .chassis button.pill,
@@ -641,6 +721,11 @@ html.chassis {
     padding-left: 1.618033988749895em;
     padding-right: 1.618033988749895em;
     border-radius: 1.3827882373436318em;
+}
+
+.chassis button svg.icon,
+.chassis .polymath main > .splash .hero .toolbar button svg.icon {
+    stroke: currentColor;
 }
 
 .chassis button:disabled,
@@ -655,14 +740,8 @@ html.chassis {
 }
 
 .chassis a.button {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     padding-top: .6360098247570346em;
     padding-right: .9823784767414218em;
@@ -680,16 +759,30 @@ html.chassis {
     color: white;
 }
 
-.chassis a.button svg.icon {
+.chassis a.button .icon {
+    height: calc(1.3827882373436318em - 2px);
+}
+
+.chassis a.button .left.icon {
+    order: -1;
     -webkit-transform: translateX(-0.4293858394957214em);
             transform: translateX(-0.4293858394957214em);
-    stroke: currentColor;
+}
+
+.chassis a.button .right.icon {
+    order: 99;
+    -webkit-transform: translateX(.4293858394957214em);
+            transform: translateX(.4293858394957214em);
 }
 
 .chassis a.button.pill {
     padding-left: 1.618033988749895em;
     padding-right: 1.618033988749895em;
     border-radius: 1.3827882373436318em;
+}
+
+.chassis a.button svg.icon {
+    stroke: currentColor;
 }
 
 .chassis a.button:hover, .chassis a.button.hover {
@@ -715,18 +808,12 @@ html.chassis {
 }
 
 .chassis .polymath {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-        flex-direction: column;
+    flex-direction: column;
     min-height: 100vh;
 }
 
 .chassis .polymath h2 {
-    font-size: 25.888px;
     font-size: 1.618033988749895rem;
     font-weight: bold;
 }
@@ -751,36 +838,24 @@ html.chassis {
     display: none;
 }
 
-.chassis .polymath > header .width-constraint {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.chassis .polymath > header .width.constraint {
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 }
 
 .chassis .polymath > footer {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 
 .chassis .polymath > footer .social {
     margin: 0;
     padding: 1.18em 0;
-    background: rgb(96, 26, 26);
+    background: hsl(0, 56.5217391304%, 23.6%);
 }
 
 .chassis .polymath > footer .social nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     margin: 0;
 }
@@ -808,12 +883,11 @@ html.chassis {
     margin: 0;
     padding: 3.82em 0;
     background: rgb(44, 45, 48);
-    font-size: 12.578px;
     font-size: .7861513777574233rem;
     font-weight: 300;
 }
 
-.chassis .polymath > footer .legal .width-constraint {
+.chassis .polymath > footer .legal .width.constraint {
     text-align: center;
 }
 
@@ -824,11 +898,7 @@ html.chassis {
 }
 
 .chassis .polymath > footer .legal nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -846,36 +916,35 @@ html.chassis {
 }
 
 .chassis .polymath main {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 0 auto;
-        flex: 1 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    flex: 1 0 auto;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 .chassis .polymath main > .content {
     margin: 0;
-    padding: 11.8vh 0;
+    padding: 6.18vh 0;
     font-weight: 300;
     letter-spacing: .0382em;
 }
 
-.chassis .polymath main > .content .width-constraint {
+.chassis .polymath main > .content .width.constraint {
     max-width: 1200px;
 }
 
 @media screen and (min-width: 769px) {
+    .chassis .polymath main > .content {
+        padding: 11.8vh 0;
+    }
+
     .chassis .polymath main > .content .content {
         font-size: .7861513777574233rem;
     }
+}
+
+.chassis .polymath main h2 {
+    text-align: center;
 }
 
 .chassis .polymath main > .splash {
@@ -888,10 +957,9 @@ html.chassis {
     right: 0;
     left: 0;
     z-index: 1;
-    padding-top: 3.82em;
 }
 
-.chassis .polymath main > .splash > header .width-constraint {
+.chassis .polymath main > .splash > header .width.constraint {
     text-align: center;
 }
 
@@ -900,9 +968,7 @@ html.chassis {
     z-index: 1;
     -webkit-transform: translate(0, 50%);
             transform: translate(0, 50%);
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
+    flex: 0 0 auto;
     min-width: 150px;
     width: 100%;
     max-width: 320px;
@@ -910,9 +976,6 @@ html.chassis {
     overflow: hidden;
     background: rgb(16, 35, 55);
     border-radius: .382em;
-    -webkit-box-shadow: 0 0 23.6em 0 rgba(0, 41, 62, .618);
-            box-shadow: 0 0 23.6em 0 rgba(0, 41, 62, .618);
-    font-size: 12.578px;
     font-size: .7861513777574233rem;
     text-align: center;
     color: white;
@@ -945,19 +1008,16 @@ html.chassis {
 @media screen and (min-width: 1025px) {
     .chassis .polymath main > .splash > header .logo {
         top: 3.82em;
+        box-shadow: 0 0 23.6em 0 rgba(0, 41, 62, .618);
     }
 }
 
 .chassis .polymath main > .splash > header nav {
     position: relative;
     z-index: 2;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 38.2%;
-        flex: 1 1 38.2%;
+    flex: 1 1 38.2%;
     display: none;
-    -ms-flex-pack: distribute;
     justify-content: space-around;
-    font-size: 12.578px;
     font-size: .7861513777574233rem;
 }
 
@@ -997,8 +1057,6 @@ html.chassis {
 
 @media screen and (min-width: 1025px) {
     .chassis .polymath main > .splash > header nav {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         margin: 4.36em 0 0;
     }
@@ -1012,15 +1070,17 @@ html.chassis {
     }
 
     .chassis .polymath main > .splash > header nav.left {
-        -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
         order: -1;
     }
 
     .chassis .polymath main > .splash > header nav.right {
-        -webkit-box-ordinal-group: 100;
-        -ms-flex-order: 99;
         order: 99;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main > .splash > header {
+        padding-top: 3.82em;
     }
 }
 
@@ -1031,32 +1091,19 @@ html.chassis {
         padding-top: 0;
     }
 
-    .chassis .polymath main > .splash > header .width-constraint {
-        display: -webkit-box;
-        display: -ms-flexbox;
+    .chassis .polymath main > .splash > header .width.constraint {
         display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
         justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
     }
 }
 
 .chassis .polymath main > .splash .hero {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-        flex-direction: column;
+    flex-direction: column;
     margin: 0;
-    padding: 11.8em 0 3.82em;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(2.36%, rgb(72, 105, 138)), to(transparent)),
-                radial-gradient(ellipse at center, rgba(214, 214, 214, 0) 0%, rgba(0, 0, 0, .38) 50%, rgba(255, 255, 255, 0) 100%);
+    padding: 8em 0 3.82em;
     background: linear-gradient(rgb(72, 105, 138) 2.36%, transparent 100%),
                 radial-gradient(ellipse at center, rgba(214, 214, 214, 0) 0%, rgba(0, 0, 0, .38) 50%, rgba(255, 255, 255, 0) 100%);
     color: white;
@@ -1083,38 +1130,18 @@ html.chassis {
 }
 
 .chassis .polymath main > .splash .hero .tagline {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 0 auto;
-        flex: 1 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    flex: 1 0 auto;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
+    flex-direction: column;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     margin-bottom: 3.82vh;
 }
 
-.chassis .polymath main > .splash .hero .tagline .width-constraint {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.chassis .polymath main > .splash .hero .tagline .width.constraint {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
+    flex-direction: column;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -1124,8 +1151,7 @@ html.chassis {
 }
 
 .chassis .polymath main > .splash .hero .tagline .line.main {
-    margin-bottom: .5em;
-    font-size: 41.888px;
+    margin-bottom: calc(1em / 2);
     font-size: 2.618033988749895rem;
     line-height: normal;
 }
@@ -1162,124 +1188,293 @@ html.chassis {
     margin: 0;
 }
 
-.chassis .polymath main > .splash .hero .toolbar .width-constraint {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.chassis .polymath main > .splash .hero .toolbar .width.constraint {
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 }
 
 .chassis .polymath main > .splash .hero .toolbar button {
     opacity: .8;
-    -webkit-box-shadow: inset 0 0 0 2px rgb(105, 156, 211), 0 0 2em 1em rgba(0, 0, 0, .16);
-            box-shadow: inset 0 0 0 2px rgb(105, 156, 211), 0 0 2em 1em rgba(0, 0, 0, .16);
+    box-shadow: inset 0 0 0 2px hsl(210.76923076923077, 54.9295774648%, 61.8%),
+                0 0 2em 1em rgba(0, 0, 0, .1618);
 }
 
 .chassis .polymath main > .splash .hero .toolbar button:hover,
 .chassis .polymath main > .splash .hero .toolbar button.hover {
     opacity: 1;
-    -webkit-box-shadow: inset 0 0 0 2px white, 0 0 2em 1em rgba(0, 0, 0, .23);
-            box-shadow: inset 0 0 0 2px white, 0 0 2em 1em rgba(0, 0, 0, .23);
+    box-shadow: inset 0 0 0 2px white, 0 0 2em 1em rgba(0, 0, 0, .236);
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main > .splash .hero {
+        padding-top: 11.8em;
+    }
 }
 
 .chassis .polymath main .intro {
-    color: rgb(128, 128, 128);
+    padding-top: 11.8vh;
+    color: hsl(0, 0%, 50%);
 }
 
-.chassis .polymath main .intro .width-constraint .column.welcome {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 75%;
-        flex: 1 1 75%;
+.chassis .polymath main .intro h2 {
+    text-align: left;
 }
 
-.chassis .polymath main .intro .width-constraint .column.welcome h2 {
+.chassis .polymath main .intro .width.constraint .column.welcome {
+    flex: 1 1 75%;
+}
+
+.chassis .polymath main .intro .width.constraint .column.welcome h2 {
     color: rgb(68, 68, 68);
 }
 
-.chassis .polymath main .intro .width-constraint .column.welcome > *:last-child {
+.chassis .polymath main .intro .width.constraint .column.welcome > *:last-child {
     margin-bottom: 0;
 }
 
-.chassis .polymath main .intro .width-constraint .column.info {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 25%;
-        flex: 1 1 25%;
+.chassis .polymath main .intro .width.constraint .column .certifications h3 {
+    display: none;
 }
 
-.chassis .polymath main .intro .width-constraint .column.info h3 {
+.chassis .polymath main .intro .width.constraint .column .certifications a {
+    display: inline-block;
+}
+
+.chassis .polymath main .intro .width.constraint .column .certifications a img {
+    display: block;
+}
+
+.chassis .polymath main .intro .width.constraint .column .certifications .mastered-for-itunes {
+    display: flex;
+    align-items: center;
+    font-size: .7861513777574233rem;
+}
+
+.chassis .polymath main .intro .width.constraint .column .certifications .mastered-for-itunes img {
+    max-height: 3.82em;
+    margin-right: 1em;
+}
+
+.chassis .polymath main .intro .width.constraint .column.info {
+    flex: 1 1 25%;
+}
+
+.chassis .polymath main .intro .width.constraint .column.info h3 {
     color: rgb(68, 68, 68);
     text-transform: uppercase;
     font-weight: 300;
 }
 
-.chassis .polymath main .intro .width-constraint .column.info .services ul {
+.chassis .polymath main .intro .width.constraint .column.info .services ul {
     margin-bottom: 1em;
     list-style-type: disc;
 }
 
-.chassis .polymath main .intro .width-constraint .column.info .services ul li {
+.chassis .polymath main .intro .width.constraint .column.info .services ul li {
     margin-left: 1em;
 }
 
-.chassis .polymath main .intro .width-constraint .column.info .certifications a {
-    display: inline-block;
-}
-
-.chassis .polymath main .intro .width-constraint .column.info .certifications a img {
-    display: block;
-}
-
-.chassis .polymath main .intro .width-constraint .column.info .certifications .mastered-for-itunes img {
-    max-height: 3em;
-}
-
 @media screen and (min-width: 769px) {
-    .chassis .polymath main .intro .width-constraint .column {
+    .chassis .polymath main .intro .width.constraint .column {
         margin: 0;
     }
 
-    .chassis .polymath main .intro .width-constraint .column:last-child {
+    .chassis .polymath main .intro .width.constraint .column:last-child {
         margin-left: 11.8%;
     }
 }
 
 @media screen and (min-width: 769px) {
-    .chassis .polymath main .intro .width-constraint {
-        display: -webkit-box;
-        display: -ms-flexbox;
+    .chassis .polymath main .intro .width.constraint {
         display: flex;
     }
 }
 
-.chassis .polymath main .how-it-works {
+.chassis .polymath main .gallery {
+    height: 44vh;
+    min-height: 23.6em;
+    padding: 2.36em 0;
+    background: rgb(16, 35, 55);
     color: white;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(2.36%, rgb(0, 46, 68)), to(transparent)),
-                radial-gradient(ellipse at center, rgba(214, 214, 214, 0) 0%, rgba(0, 0, 0, .38) 50%, rgba(255, 255, 255, 0) 100%),
-                rgb(16, 35, 55) url("../assets/images/how-it-works.jpg") center center no-repeat;
-    background: linear-gradient(rgb(0, 46, 68) 2.36%, transparent 100%),
-                radial-gradient(ellipse at center, rgba(214, 214, 214, 0) 0%, rgba(0, 0, 0, .38) 50%, rgba(255, 255, 255, 0) 100%),
-                rgb(16, 35, 55) url("../assets/images/how-it-works.jpg") center center no-repeat;
-    background-size: cover;
 }
 
-.chassis .polymath main .how-it-works ol {
+.chassis .polymath main .gallery .width.constraint {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.chassis .polymath main .gallery button {
+    position: absolute;
+    z-index: 2;
+    padding: 3.82em 0;
+    opacity: .618;
+}
+
+.chassis .polymath main .gallery button svg {
+    stroke: white;
+    stroke-linecap: square;
+    height: 2.36em;
+    width: 2.36em;
+    background: rgb(16, 35, 55);
+    border-radius: .236em;
+}
+
+.chassis .polymath main .gallery button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.chassis .polymath main .gallery button.previous {
+    left: 3.82%;
+}
+
+.chassis .polymath main .gallery button.next {
+    right: 3.82%;
+}
+
+.chassis .polymath main .gallery ol {
     list-style-type: decimal;
 }
 
-.chassis .polymath main .how-it-works ol li {
+.chassis .polymath main .gallery ol li {
     margin-left: 1em;
 }
 
-.chassis .polymath main .how-it-works ol li h3 {
+.chassis .polymath main .gallery ol li h3 {
     color: currentColor;
 }
 
+.chassis .polymath main .gallery .content {
+    z-index: 2;
+}
+
+.chassis .polymath main .gallery .slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(16, 35, 55);
+}
+
+.chassis .polymath main .gallery .slider .slide {
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+
 @media screen and (min-width: 769px) {
-    .chassis .polymath main .how-it-works .width-constraint {
+    .chassis .polymath main .gallery {
+        height: 88vh;
+    }
+
+    .chassis .polymath main .gallery .width.constraint {
         padding-left: 38.2%;
     }
+}
+
+.chassis .polymath main .gear .content li {
+    margin-bottom: 1em;
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .gear .content .row {
+        display: flex;
+        width: 100%;
+        min-width: 320px;
+        max-width: 2048px;
+        margin: 0 auto;
+        padding-left: 6.18em;
+        padding-right: 6.18em;
+    }
+
+    .chassis .polymath main .gear .content .row > section {
+        flex: 0 0 50%;
+        text-align: center;
+    }
+
+    .chassis .polymath main .gear .content .row > section:first-of-type {
+        margin-right: 3.09%;
+    }
+
+    .chassis .polymath main .gear .content .row > section:last-of-type {
+        margin-left: 3.09%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .chassis .polymath main .gear .row > section.collapsible {
+        margin: 0;
+        border-bottom: 1px solid rgb(209, 210, 212);
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible h3 {
+        display: flex;
+        margin: 0;
+        padding-top: .6360098247570346em;
+        padding-right: .9823784767414218em;
+        padding-bottom: .6360098247570346em;
+        padding-left: .9823784767414218em;
+        cursor: pointer;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible h3 .icon {
+        margin-right: .32410192262448956em;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible h3:hover {
+        background: rgb(237, 237, 237);
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible .down.icon {
+        display: none;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible ul {
+        display: none;
+        margin-top: 1em;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible ul li {
+        padding-left: calc(1.3827882373436318em + .32410192262448956em + .9823784767414218em);
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible.open .icon.down {
+        display: block;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible.open .icon.right {
+        display: none;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible.open ul {
+        display: block;
+    }
+
+    .chassis .polymath main .gear .row:last-of-type > section.collapsible:last-child {
+        border: none;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .gear {
+        padding-bottom: 0;
+    }
+
+    .chassis .polymath main .gear h3 .icon {
+        display: none;
+    }
+}
+
+.chassis .polymath main .testimonials {
+    background: rgb(16, 35, 55);
+    color: white;
+}
+
+.chassis .polymath main > .contact {
+    padding: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
